@@ -1,0 +1,19 @@
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class = "navbar-header">
+      <h2 style="font-family:'Times New Roman'; color:white">Error Message</h2>
+    </div>
+    <%= render partial: "users/home" %>
+    <%= render partial: "users/logout" %>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1 style="font-family: 'Times New Roman';color: RED">Please enter a valid input:</h1>
+    <h2 style="font-family: 'Times New Roman'">Checkout time should be less than return time</h2>
+    <h2 style="font-family: 'Times New Roman'">Minimum booking time should be 1 hour and maximum should be 10 hours</h2>
+    <h2 style="font-family: 'Times New Roman'">You can not book a car more than 7 days in advance</h2>
+    <h2 style="font-family: 'Times New Roman'">You can not reserve more than one car at a time</h2>
+  </div>
+</div>

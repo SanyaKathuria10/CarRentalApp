@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class = "navbar-header">
+      <h2 style="font-family:'Times New Roman'; color:white">Current Reservations</h2>
+    </div>
+    <%= render partial: "users/home" %>
+    <%= render partial: "users/logout" %>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="list-group">
+        <li class="list-group-item">
+          <% car = Car.find(reservation.car_id);
+              manuf = car.manufacturer;
+              model = car.model;
+              lisence = car.lisence;
+          %>
+          <strong> Car Manufacturer: </strong><%= manuf%><br>
+          <strong> Car Model: </strong><%= model%><br>
+          <strong> Car Lisence: </strong><%= lisence%><br>
+          <strong> Checkout Time: </strong><%= reservation.checkout_time%><br>
+          <strong> Return Time:</strong> <%= reservation.return_time%><br>
+          <strong> Total Bill: $</strong> <%= reservation.total_bill%><br>
+          <strong> Reservation status:</strong> <%= reservation.reservation_status%><br><br>
+          <%= link_to 'check out',checkout_user_path(reservation), :class => "btn btn-primary" %>
+          <%= link_to 'return', return_car_user_path(reservation), :class => "btn btn-success" %>
+          <%= link_to 'cancel', cancel_reservation_user_path(reservation), :class => "btn btn-danger" %>
+        </li>
+  </div>
+</div>

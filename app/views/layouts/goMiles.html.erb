@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GoMILES</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body class="background">
+  <%= yield %>
+</nav>
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="container">
+    <div class = "navbar-header">
+      <a href="#" class="navbar-brand"> GoMILES </a>
+    </div>
+    <button align="right" class="btn btn-danger navbar-btn" data-toggle="modal" data-target="#myModal">contact us</button>
+  </div>
+</nav>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Contact Details</h4>
+      </div>
+      <div class="modal-body">
+        <p>For any issue please drop a mail to <span style="text-decoration: underline; color: RED;">kkumar4@ncsu.edu,</span>
+          <span style="text-decoration: underline; color: RED;">amehta8@ncsu.edu,</span>
+          <span style="text-decoration: underline; color: RED;">skathur2@ncsu.edu</span></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

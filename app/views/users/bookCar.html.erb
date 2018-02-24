@@ -1,0 +1,108 @@
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class = "navbar-header">
+      <h2 style="font-family:'Times New Roman'; color:white">Book Car</h2>
+    </div>
+    <%= render partial: "home" %>
+    <%= render partial: "logout" %>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="jumbotron">
+        <h2 style="font-family: 'Times New Roman'; color:RED"><strong>Search details</strong></h2>
+        <form class="form-horizontal" action="/cars/get_availableCars" method="post">
+          <input name="authenticity_token" type="hidden" value="sankskapooravakathuraixxa=">
+          <input name="bookUserId" type="hidden" value="<%= user%>">
+
+          <fieldset>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label"
+                       for="checkout">Checkout Time</label>
+                <div class="col-sm-10">
+
+                <div class='input-group date' id='datetimepicker1'>
+                  <input type='text' class="form-control" name="checkout_time"/>
+                  <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label"
+                       for="return">Return Time</label>
+                <div class="col-sm-10">
+
+                <div class='input-group date' id='datetimepicker2'>
+                  <input type='text' class="form-control" name="return_time"/>
+                  <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label"
+                       for="manufacturer">Manufacturer</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text"
+                         name="manufacturer" placeholder="Manufacturer (optional)">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label"
+                       for="model">Model</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text"
+                         name="model" placeholder="Model (optional)">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label"
+                       for="location">Location</label>
+                <div class="col-sm-10">
+                  <input class="form-control" type="text"
+                         name="location" placeholder="Location (optional)">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-sm-2 control-label"
+                       for="location">Style</label>
+                <div class="col-sm-4">
+                  <label class="radio-inline"><input type="radio" name="style" value="Coupe">Coupe</label>
+                  <label class="radio-inline"><input type="radio" name="style" value="Sedan">Sedan</label>
+                  <label class="radio-inline"><input type="radio" name="style" value="SUV">SUV</label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-6 col-sm-offset-2">
+                  <input type="submit" class="btn btn-info"
+                         value="search cars">
+                </div>
+              </div>
+
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker({format: 'YYYY/MM/DD hh:mm:ss',minDate: new Date()});
+        });
+        $(function () {
+            $('#datetimepicker2').datetimepicker({format: 'YYYY/MM/DD hh:mm:ss',minDate: new Date()});
+        });
+</script>

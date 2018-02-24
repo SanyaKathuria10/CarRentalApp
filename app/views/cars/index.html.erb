@@ -1,0 +1,26 @@
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class = "navbar-header">
+      <h2 style="font-family:'Times New Roman'; color:white">Browse List</h2>
+    </div>
+    <%= render partial: "users/home" %>
+    <%= render partial: "users/logout" %>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="list-group">
+    <% cars.each do |car| %>
+        <li class="list-group-item">
+          <strong> Manufacturer: </strong><%= car.manufacturer%>
+          <strong> Model:</strong> <%= car.model%>
+          <strong> License:</strong> <%= car.lisence%>
+          <strong> Hourly-Rate:</strong> <%= car.hourly_rate%>
+          <strong> Location:</strong> <%= car.location%>
+          <strong> Style:</strong> <%= car.style%>
+          <%= link_to 'Edit', edit_car_path(car), :class => "btn btn-warning"%>
+          <%= link_to 'Delete', car, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"%>
+        </li>
+    <% end %>
+  </div>
+</div>

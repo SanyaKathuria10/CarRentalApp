@@ -1,0 +1,23 @@
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class = "navbar-header">
+      <h2 style="font-family:'Times New Roman'; color:white">Available cars</h2>
+    </div>
+    <%= render partial: "users/home" %>
+    <%= render partial: "users/logout" %>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="list-group">
+    <% cars.each do |car| %>
+        <li class="list-group-item">
+          <strong> Manufacturer: </strong><%= car.manufacturer%>
+          <strong> Model:</strong> <%= car.model%>
+          <strong> License:</strong> <%= car.lisence%>
+          <strong> Hourly-Rate:</strong> <%= car.hourly_rate%>
+          <strong> Location:</strong> <%= car.location%>
+          <%= link_to 'Reserve', {:controller => "reservations", :action => "create", :checkout_time => checkout_time, :return_time => return_time, :user_id => user_id, :car_id => car.id, :reservation_status => "Reserved", :total_bill => 0.0}, :class => "btn btn-success", method: :post%>
+        </li>
+    <% end %>
+  </div>
+</div>

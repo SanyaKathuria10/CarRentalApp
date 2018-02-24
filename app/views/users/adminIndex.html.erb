@@ -1,0 +1,27 @@
+
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class = "navbar-header">
+      <h2 style="font-family:'Times New Roman'; color:white"> Welcome <%=current_user.name%>! Browse List</h2>
+    </div>
+    <%= render partial: "home" %>
+    <%= render partial: "logout" %>
+  </div>
+</nav>
+
+<div class="container-fluid">
+        <div class="list-group">
+          <%= link_to '<button type="button" id="bookCar" class="list-group-item list-group-item-action">Book Car</button>'.html_safe, book_car_user_path(current_user)%>
+          <%= link_to '<button type="button" id="listCars"  class="list-group-item list-group-item-action">My reservation</button>'.html_safe, current_reservations_user_path(current_user)%>
+          <%= link_to '<button type="button" id="listCars"  class="list-group-item list-group-item-action">View checkout history</button>'.html_safe, checkout_history_user_path(current_user)%>
+          <button type="button" id="newAdmin" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addAdminModal">Add new administrator</button>
+          <%= link_to '<button type="button" id="listAdmin"  class="list-group-item list-group-item-action">List all Administrators</button>'.html_safe, :action => :list_admins %>
+          <button type="button" id="newCar" class="list-group-item list-group-item-action" data-toggle="modal" data-target="#addCarModal">Add new car</button>
+          <%= link_to '<button type="button" id="listCars"  class="list-group-item list-group-item-action">List all cars</button>'.html_safe, :action => :index, :controller=>"cars" %>
+          <%= link_to '<button type="button" id="listCustomers" class="list-group-item list-group-item-action">List all Customers</button>'.html_safe, :action => :list_users %>
+          <%= link_to '<button type="button" id="updateMe" class="list-group-item list-group-item-action">Update profile</button>'.html_safe, update_profile_user_path(current_user)%>
+        </div>
+</div>
+
+<%= render partial: "cars/addcar" %>
+<%= render partial: "addadmins" %>

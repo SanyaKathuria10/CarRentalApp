@@ -1,0 +1,47 @@
+
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class = "navbar-header">
+      <h2 style="font-family:'Times New Roman'; color:white">Browse List</h2>
+    </div>
+    <%= render partial: "home" %>
+    <%= render partial: "logout" %>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="list-group">
+    <% @users.each do |user| %>
+        <li class="list-group-item">
+          <strong> Name: </strong><%= user.name%>
+          <strong> Email:</strong> <%= user.email%>
+          <strong>Contact:</strong> <%= user.contact%>
+          <%= if !(current_user.eql?user)
+                link_to 'Book Car', book_car_user_path(user), :class => "btn btn-primary"
+              end
+          %>
+          <%= if !(current_user.eql?user)
+                link_to 'Edit Reservation',current_reservations_user_path(user), :class => "btn btn-warning"
+              end
+          %>
+          <%= if !(current_user.eql?user)
+                link_to 'Checkout History', checkout_history_user_path(user), :class => "btn btn-info"
+              end
+          %>
+          <%= if !("superadmin".eql?(user.user_type) || (current_user.eql?user))
+                link_to 'Edit', edit_user_path(user), :class => "btn btn-warning"
+              elsif !(current_user.eql?user)
+                " #Super Administrator"
+              else
+                " #Myself"
+              end
+          %>
+          <%= if !("superadmin".eql?(user.user_type) || (current_user.eql?user))
+                link_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"
+              end
+          %>
+
+        </li>
+    <% end %>
+  </div>
+</div>

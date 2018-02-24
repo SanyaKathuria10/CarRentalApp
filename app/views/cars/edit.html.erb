@@ -1,0 +1,13 @@
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class = "navbar-header">
+      <h2 style="font-family:'Times New Roman'; color:white"> Edit car details</h2>
+    </div>
+    <%= render partial: "users/home" %>
+    <%= render partial: "users/logout" %>
+  </div>
+</nav>
+
+<%= render 'form', car: car %>
+
+<%= link_to 'Show', car, class: 'btn btn-success' %>

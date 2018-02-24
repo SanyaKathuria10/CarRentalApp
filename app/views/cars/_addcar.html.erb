@@ -1,0 +1,81 @@
+<!-- Modal -->
+<div id="addCarModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Car Details</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" action="/cars" method="post">
+          <input name="user_type" type="hidden" value="admin">
+          <fieldset>
+            <div class="form-group">
+              <input name="authenticity_token" type="hidden" value="sankskapooravakathuraia=">
+              <label class="col-sm-2 control-label"
+                     for="manufacturer">Manufacturer</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text"
+                       name="manufacturer" placeholder="Manufacturer">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"
+                     for="lisence">Lisence</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text"
+                       name="lisence" placeholder="Lisence">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"
+                     for="hourly_rate">Hourly Rate</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text"
+                       name="hourly_rate" placeholder="hourly_rate">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"
+                     for="model">Model</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text"
+                       name="model" placeholder="Model">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"
+                     for="location">Location</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="text"
+                       name="location" placeholder="Location">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label"
+                     for="location">Style</label>
+              <div class="col-sm-10">
+                  <label class="radio-inline"><input type="radio" name="style" value="Coupe">Coupe</label>
+                  <label class="radio-inline"><input type="radio" name="style" value="Sedan">Sedan</label>
+                  <label class="radio-inline"><input type="radio" name="style" value="SUV">SUV</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10 col-sm-offset-2">
+                <input type="submit" class="btn btn-info"
+                       value="submit">
+              </div>
+            </div>
+
+          </fieldset>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

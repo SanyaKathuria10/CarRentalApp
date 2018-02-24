@@ -1,0 +1,38 @@
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class = "navbar-header">
+      <h2 style="font-family:'Times New Roman'; color:white">Checkout History</h2>
+    </div>
+    <%= render partial: "users/home" %>
+    <%= render partial: "users/logout" %>
+  </div>
+</nav>
+<%checkFirst=true%>
+<div class="container-fluid">
+  <div class="list-group">
+    <% reservations.each do |reservation| %>
+        <% car = Car.find_by_id(reservation.car_id);
+           if !car.nil? %>
+            <% if checkFirst %>
+               <li class="list-group-item" style="color: white;background: darkgreen">
+            <% checkFirst = false
+                 else %>
+                <li class="list-group-item">
+                <%end%>
+                <%
+                   manuf = car.manufacturer;
+                   model = car.model;
+                   lisence = car.lisence;
+                %>
+                <strong> Car Manufacturer: </strong><%= manuf%>
+                <strong> Car Model: </strong><%= model%>
+                <strong> Car License: </strong><%= lisence%>
+                <strong> Checkout Time: </strong><%= reservation.checkout_time%>
+                <strong> Return Time:</strong> <%= reservation.return_time%>
+                <strong> Total Bill: $</strong> <%= reservation.total_bill%>
+                <strong> Reservation status:</strong> <%= reservation.reservation_status%>
+              </li>
+        <% end %>
+    <% end %>
+  </div>
+</div>

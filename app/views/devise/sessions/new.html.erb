@@ -1,0 +1,74 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class = "navbar-header">
+      <a href="#" class="navbar-brand"> GoMILES</a>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class="jumbotron">
+        <div class="carousel slide" data-ride="carousel" id="fx">
+          <div class="carousel-inner">
+            <div class="item active">
+              <h3><strong>Why GoMILES?</strong></h3>
+              <p style="font-family:'Times New Roman';">
+                During your long weekends what if you wish to travel and explore places but don't own a vehicle, that's when GoMILES can help you by providing a vehicle of your choice and in your budget.
+                Use GoMILES to reserve a car for full filling your wish of long drive or exploring a local town near by.
+              </p>
+            </div>
+            <div class="item">
+              <h3><strong>What all you can do?</strong></h3>
+              <p style="font-family:'Times New Roman';">
+                First get yourself registered on <i>GoMILES</i>. After successful registration, you can log into the application to see list of cars available for you to book based on your needs and budget.
+                You can book a car for minimum of atleast 1 hour and maximum of 10 hours.
+              </p>
+            </div>
+            <div class="item">
+              <h3><strong>Do we charge upfront?</strong></h3>
+              <p style="font-family:'Times New Roman';">
+                <i>NO!</i>  we don't charge any upfront fee but you need to submit a valid license copy to pick a car after booking it using GoMILES.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <div class = "jumbotron">
+        <legend style="font-family: 'Times New Roman'; color: red"><strong>Log in</strong></legend>
+
+              <%= form_for(resource, as: resource_name, url: session_path(resource_name),html: {:class => "form-horizontal"}) do |f| %>
+                  <%= devise_error_messages! %>
+                            <div class="form-group">
+                              <%= f.label :email , :class => "col-sm-2 control-label" %>
+                              <div class = "col-sm-10">
+                                 <%= f.email_field :email, autofocus: true, :class => "form-control"%>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <%= f.label :password , :class => "col-sm-2 control-label"%>
+                              <div class = "col-sm-10">
+                                  <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+                              </div>
+                            </div>
+
+                            <% if devise_mapping.rememberable? %>
+                              <div class="form-group">
+                                <%= f.label :remember_me %>
+                                <%= f.check_box :remember_me, :class => "form-control" %>
+                              </div>
+                             <% end -%>
+
+                            <div class="form-group actions">
+                                <%= f.submit "Log in" ,:class => "btn btn-primary" %>
+                            </div>
+               <% end -%>
+        <%= render "devise/shared/links" %>
+
+      </div>
+  </div>
+</div>
+</div>

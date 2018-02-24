@@ -1,0 +1,24 @@
+<nav class="navbar navbar-inverse ">
+  <div class="container-fluid">
+    <div class = "navbar-header">
+      <h2 style="font-family:'Times New Roman'; color:white">Browse List</h2>
+    </div>
+    <%= render partial: "users/home" %>
+    <%= render partial: "users/logout" %>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="list-group">
+    <% reservations.each do |reservation| %>
+        <li class="list-group-item">
+          <strong> Pick-Up: </strong><%= reservation.checkout_time%>
+          <strong> Return:</strong> <%= reservation.return_time%>
+          <strong> Total Charge: $</strong> <%= reservation.total_bill%>
+          <strong> Reservation Status:</strong> <%= reservation.reservation_status%>
+          <%= link_to 'Edit', edit_reservation_path(reservation), :class => "btn btn-warning"%>
+          <%= link_to 'Delete', reservation, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger"%>
+        </li>
+    <% end %>
+  </div>
+</div>
