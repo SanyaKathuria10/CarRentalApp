@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rid: 1
+  checkout_time: 2017-09-23 00:48:21
+  return_time: 2017-09-23 00:48:21
+  location: MyString
+  total_bill: 1.5
+  reservation_status: MyString
+
+two:
+  rid: 1
+  checkout_time: 2017-09-23 00:48:21
+  return_time: 2017-09-23 00:48:21
+  location: MyString
+  total_bill: 1.5
+  reservation_status: MyString

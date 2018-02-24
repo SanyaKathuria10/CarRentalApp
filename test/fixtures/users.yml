@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  uid: 1
+  name: MyString
+  email: MyString
+  password: MyString
+  phone_number: MyString
+  currently_reserved: false
+
+two:
+  uid: 1
+  name: MyString
+  email: MyString
+  password: MyString
+  phone_number: MyString
+  currently_reserved: false
